@@ -1,0 +1,1115 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.9.16)  31 OCT 2018 15:16
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**"/Users/viniciuslucena/GoogleDrive/0s Projetos/TCC/Modelo Latex PG - C3FURG/modelo_pgi_ecomp.tex"
+(/Users/viniciuslucena/GoogleDrive/0s Projetos/TCC/Modelo Latex PG - C3FURG/modelo_pgi_ecomp.tex
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(./C3FURG.cls
+./C3FURG.cls:21: Undefined control sequence.
+\UseTextAccent ...up \@firstofone \let \@curr@enc 
+                                                  \cf@encoding \@use@text@en...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Argument of \@font@info has an extra }.
+<inserted text> 
+                \par 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./C3FURG.cls:21: Paragraph ended before \@font@info was complete.
+<to be read again> 
+                   \par 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./C3FURG.cls:21: Undefined control sequence.
+\get@external@font ->\let \external@font 
+                                         \@empty \edef \font@info {\expandaf...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\get@external@font ...nt \@empty \edef \font@info 
+                                                  {\expandafter \expandafter...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\try@size@range ...tract@rangefontinfo \font@info 
+                                                  <-*>\@nil <\@nnil 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Use of \@pr@videpackage doesn't match its definition.
+\ifnot@nil #1->\def \reserved@a {
+                                 #1}\ifx \reserved@a \@nnil \expandafter \@g...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+./C3FURG.cls:21: Undefined control sequence.
+<argument> \@nil 
+                 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+<argument> \def \reserved@f 
+                            {\extract@rangefontinfo <\@nnil }\upper@bound 0*...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Argument of \extract@rangefontinfo has an extra }.
+<inserted text> 
+                \par 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+\@nnil 
+./C3FURG.cls:21: Paragraph ended before \extract@rangefontinfo was complete.
+<to be read again> 
+                   \par 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./C3FURG.cls:21: Undefined control sequence.
+<argument> ...d@f \@empty \fi \fi \fi \reserved@f 
+                                                  
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\extract@font ... \font \font@name \external@font 
+                                                  \relax \font@name \relax \...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                    #4  \errhelp \@err@     ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \let \@err@               ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \@empty \def \MessageBreak...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                     \endgroup 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                    #4  \errhelp \@err@     ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \let \@err@               ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \@empty \def \MessageBreak...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                     \endgroup 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                    #4  \errhelp \@err@     ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \let \@err@               ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \@empty \def \MessageBreak...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                     \endgroup 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                    #4  \errhelp \@err@     ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \let \@err@               ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \@empty \def \MessageBreak...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                     \endgroup 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                    #4  \errhelp \@err@     ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \let \@err@               ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \@empty \def \MessageBreak...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                     \endgroup 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                    #4  \errhelp \@err@     ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \let \@err@               ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \@empty \def \MessageBreak...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                     \endgroup 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                    #4  \errhelp \@err@     ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \let \@err@               ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \@empty \def \MessageBreak...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                     \endgroup 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                    #4  \errhelp \@err@     ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \let \@err@               ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \@empty \def \MessageBreak...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                     \endgroup 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                    #4  \errhelp \@err@     ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \let \@err@               ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \@empty \def \MessageBreak...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                     \endgroup 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                    #4  \errhelp \@err@     ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \let \@err@               ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \@empty \def \MessageBreak...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                     \endgroup 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                    #4  \errhelp \@err@     ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \let \@err@               ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \@empty \def \MessageBreak...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                     \endgroup 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                    #4  \errhelp \@err@     ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \let \@err@               ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \@empty \def \MessageBreak...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                     \endgroup 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                    #4  \errhelp \@err@     ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \let \@err@               ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \@empty \def \MessageBreak...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                     \endgroup 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                    #4  \errhelp \@err@     ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \let \@err@               ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \@empty \def \MessageBreak...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                     \endgroup 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                    #4  \errhelp \@err@     ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \let \@err@               ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \@empty \def \MessageBreak...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                     \endgroup 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                    #4  \errhelp \@err@     ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \let \@err@               ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \@empty \def \MessageBreak...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                     \endgroup 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                    #4  \errhelp \@err@     ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \let \@err@               ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \@empty \def \MessageBreak...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                     \endgroup 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                    #4  \errhelp \@err@     ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \let \@err@               ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \@empty \def \MessageBreak...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                     \endgroup 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                    #4  \errhelp \@err@     ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \let \@err@               ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \@empty \def \MessageBreak...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                     \endgroup 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                    #4  \errhelp \@err@     ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \let \@err@               ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \@empty \def \MessageBreak...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                     \endgroup 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                    #4  \errhelp \@err@     ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \let \@err@               ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \@empty \def \MessageBreak...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                     \endgroup 
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                    #4  \errhelp \@err@     ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \let \@err@               ...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./C3FURG.cls:21: Undefined control sequence.
+\GenericError  ...                                
+                                                  \@empty \def \MessageBreak...
+l.21 ... Federal do Rio Grande baseado em abnTeX2]
+                                                  
+(That makes 100 errors; please try again.) 
+Here is how much of TeX's memory you used:
+ 19 strings out of 492649
+ 521 string characters out of 6129622
+ 64067 words of memory out of 5000000
+ 3997 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 29i,0n,17p,257b,8s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+./C3FURG.cls:21:  ==> Fatal error occurred, no output PDF file produced!

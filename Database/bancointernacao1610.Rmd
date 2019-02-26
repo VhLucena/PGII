@@ -1,0 +1,536 @@
+---
+title: "BancoInternacao1610"
+author: "Eduardo Borges"
+output:
+  html_document:
+    df_print: paged
+---
+
+Carregando os Dados
+```{r}
+knitr::opts_chunk$set(echo = TRUE)
+
+#setwd("C:/Users/enborges/Dropbox/UFRGS/PosDoc/Datasets")
+
+#library(doMC)
+#registerDoMC(cores = 8)
+
+library(doParallel)
+#cl <- makePSOCKcluster(8) # numero dnucleos do processador
+cl <- makePSOCKcluster(4) # numero dnucleos do processador
+registerDoParallel(cl)
+#stopCluster(cl)
+#remove(cl)
+#registerDoSEQ()
+
+library(foreign)
+
+data <- read.spss('bancoInternacao/depoisJoin1610.sav', reencode='ISO_8859-1', 
+                     use.value.labels = TRUE, trim.factor.names = TRUE, trim_values = TRUE, to.data.frame = TRUE) 
+
+#data$n_internacao <- factor(data$n_internacao, labels=c("1","2"))
+data$E1_escolaridade <- ordered(data$E1_escolaridade)
+data$D25D_3cat <- ordered(data$D25D_3cat)
+data$D28D_3cat <- ordered(data$D28D_3cat)
+data$D38_3cat  <- ordered(data$D38_3cat)
+
+data$dias_internacao <- data$"DiasInternaçãocalc.automat"
+data$"DiasInternaçãocalc.automat" <- NULL
+
+data.labels <- as.data.frame(attr(data, "variable.labels")) 
+
+dim(data) # dimensions rows,columns
+
+# selecao de variaveis
+internacao <- subset(data, select = -c(record_id,info_prontuario) )
+
+# removendo instancias com classe missing
+internacao <- internacao[!is.na(internacao$dias_internacao),]
+
+#removendo instancias com todas as demais colunas missing
+internacao <- internacao[rowSums(is.na(internacao)) != ncol(internacao) -1,]
+
+# verificando distribuicao
+
+str(internacao) # object structure 
+summary(internacao)
+
+hAntes <- hist(internacao$dias_internacao)
+boxAntes <- boxplot(internacao$dias_internacao)
+
+# Removendo outliers
+
+menorOutlier <- sort(boxAntes$out)[1]
+internacaoComOutliers <- internacao
+internacao <- internacao[internacao$dias_internacao < menorOutlier,]
+
+hDepois <- hist(internacao$dias_internacao)
+boxDepois <- boxplot(internacao$dias_internacao)
+
+# Discretizando a variavel alvo em 2 classes
+
+library("arules")
+
+internacao$dias_internacao_dic7 <- discretize(internacao$dias_internacao,method = "fixed", breaks = c(-Inf,8,Inf),  labels = c("le7", "g7"))
+internacao$dias_internacao_dic14 <- discretize(internacao$dias_internacao,method = "fixed", breaks = c(-Inf,15,Inf),  labels = c("le14", "g14"))
+internacao$dias_internacao_dic_freq <- discretize(internacao$dias_internacao, breaks=2, labels = c("poucos", "muitos"))
+
+table(internacao$dias_internacao_dic7)
+{ hist(internacao$dias_internacao)
+  abline(v = discretize(internacao$dias_internacao, method = "fixed", breaks = c(-Inf,8,Inf), onlycuts = TRUE)[2], col="blue")
+}
+boxplot(internacao$dias_internacao ~ internacao$dias_internacao_dic7)
+
+table(internacao$dias_internacao_dic14)
+{ hist(internacao$dias_internacao)
+  abline(v = discretize(internacao$dias_internacao, method = "fixed", breaks = c(-Inf,15,Inf), onlycuts = TRUE)[2], col="blue")
+}
+boxplot(internacao$dias_internacao ~ internacao$dias_internacao_dic14)
+
+table(internacao$dias_internacao_dic_freq)
+{ hist(internacao$dias_internacao)
+  abline(v = discretize(internacao$dias_internacao, breaks = 2, onlycuts = TRUE)[2], col="blue")
+}
+boxplot(internacao$dias_internacao ~ internacao$dias_internacao_dic_freq)
+
+# Depois gerar boxplots de todas as variaveis considerando a classe
+
+
+```
+
+Imputacao de valores missing
+
+```{r}
+
+
+#rediscutir cada questao com mais de 5 % de missing (olhar cada quest?o que sobra com meninas)
+#Retestar desfecho binario (ponto de corte)
+
+
+# imputacao de missing 
+library(VIM)
+library(mice)
+
+# declarando funcao
+#pMiss <- function(x){sum(is.na(x))/length(x)}
+# aplicando funcao
+#ppMiss <- apply(testeSobriedade,2,pMiss)
+
+# Questoes que nunca devem ser puladas no ASI:
+# g10 g12 h8_a h9_a m25 e1 e10 e24 e31___1 e36 d01 d08 d12 d20 d34a d54 d59 l1 l18 l27a l29a l31 l32a f1 f2 f10 f16 f18 f19 f21 f23 f26 f29 f35 f40 p1 p9_a p11_a p13_a p14_a p15_a p16_a p2
+
+# Removendo instancias com ASI incompleto 
+
+missPlot <- aggr(internacao, numbers=TRUE, sortVars=TRUE, labels=names(internacao), cex.axis=.6, gap=3, ylab=c("Histogram of missing data","Pattern"))
+
+colFinais <- c("f1", "F2_amigo_verd", "f18", "f19", "f23", "f26", "f29", "f35", "F40_filhos", "p13_a", "p14_a", "p16_a")
+colOutras <- c("G10_cor_pele", "G12_conjugal", "E1_escolaridade", "H89A_rua_6m", "e36", "d01", "d59", "L27A_roubo", "L29A_agrediu")
+col = c(colOutras,colFinais)
+
+plot(rowSums(is.na(internacao[,colFinais])))
+breaks <- max(rowSums(is.na(internacao[,colFinais])))
+p <- 0.25
+v <- p*breaks
+{ hist(rowSums(is.na(internacao[,colFinais])), breaks=breaks)
+  abline(v = v, col="blue")
+}
+
+print("Removendo as tuplas com mais de v missings")
+v
+linhas <- dim(internacao)[1]
+internacao <- internacao[rowSums(is.na(internacao[,colFinais])) <= v,]
+linhasAsiCompleto <- dim(internacao)[1]
+
+
+#removendo instancias mais de p% das features = missing
+
+missPlot <- aggr(internacao, numbers=TRUE, sortVars=TRUE, labels=names(internacao), cex.axis=.6, gap=3, ylab=c("Histogram of missing data","Pattern"))
+
+p <- 0.12
+internacao <- internacao[rowSums(is.na(internacao)) <= (ncol(internacao)-1)*p,]
+linhasRemInstMiss <- dim(internacao)[1]
+
+missPlot <- aggr(internacao, numbers=TRUE, sortVars=TRUE, labels=names(internacao), cex.axis=.6, gap=3, ylab=c("Histogram of missing data","Pattern"))
+
+# H89B_rua_30d	0.738019169			
+# d13	        	0.249201278			
+# d56		        0.127795527			
+# D28D_3cat   	0.095846645			
+# D25D_3cat   	0.076677316			
+# d28b	       	0.070287540			
+# d09		        0.067092652			
+# d25a		      0.067092652			
+# d03		        0.047923323			
+# d11		        0.047923323	
+# g09_idade   	0.044728435			
+# d25b		      0.041533546			
+# L29A_agrediu	0.041533546
+
+# selecionando atributos com menos de p% de missing
+p <- 0.05
+atrib5 <- missPlot$missings[missPlot$missings$Count <= nrow(internacao)*p,] 
+atrib5$Variable
+
+internacao5 <- internacao[,atrib5$Variable]
+
+missPlotI5 <- aggr(internacao5, numbers=TRUE, sortVars=TRUE, labels=names(internacao5), cex.axis=.6, gap=3, ylab=c("Histogram of missing data","Pattern"))
+
+# imputando dados faltantes
+
+Rprof()
+
+temp5 <- mice(internacao5,m=1,maxit=50,seed=654) 
+completedTemp5 <- complete(temp5,1)
+completedTemp5a <- complete(temp5,2)
+
+Rprof(NULL)
+summaryRprof()
+
+densityplot(temp5)
+
+write.arff(completedTemp5, file = 'bancoInternacao/depoisJoin1610Imputado.arff')
+write.arff(completedTemp5a, file = 'bancoInternacao/depoisJoin1610Imputado-A.arff')
+
+
+```
+
+
+Recursive Feature Elimination com random forests 
+
+
+```{r}
+library(caret)
+library(randomForest)
+
+# Selecionado desfecho dias_internacao_dic14
+
+dataset <- completedTemp5
+dataset$dias_internacao <- ordered(dataset$dias_internacao_dic14)
+dataset$dias_internacao_dic7 <- NULL
+dataset$dias_internacao_dic14 <- NULL
+dataset$dias_internacao_dic_freq <- NULL
+
+# configurando particoes para treino e teste
+
+set.seed(654)
+
+particao <- createDataPartition(dataset$dias_internacao, p=0.75, list=FALSE)
+trainData <- dataset[particao,]
+testData <- dataset[-particao,]
+prop.table(table(dataset$dias_internacao))
+prop.table(table(trainData$dias_internacao))
+prop.table(table(testData$dias_internacao))
+
+library(mlbench)
+numericVar <- trainData[,c(1,9:13,15:18)] # susbtituir por indices das variaveis numericas
+correlationMatrix <- cor(numericVar)
+print(correlationMatrix)
+highlyCorrelated <- findCorrelation(correlationMatrix, cutoff=0.8)
+remVar <- names(numericVar[highlyCorrelated])
+remVar
+#trainData <- subset(trainData, select = -c(d01)) # colocar aqui todas as remVar
+#testData <- subset(testData, select = -c(d01)) # colocar aqui todas as remVar
+
+#### Recursive Feature Selection - Model: Random Forest  
+#trainCtrl <- trainControl(method="repeatedcv", number=10, repeats=5)
+rfeCrtl <- rfeControl(functions=rfFuncs, method="repeatedcv", number=10, repeats=5, returnResamp="final", seed=set.seed(654))
+rfeResults <- rfe(dias_internacao ~., data=trainData, 
+               sizes=seq(2, ncol(trainData)-1 , by=1),
+               rfeControl=rfeCrtl, method="rf")
+
+rfeResults
+predictors(rfeResults) # cuidar porque as variaveis retornadas combinam os valores das categorias, por exemplo, F2_amigo_verdSim
+plot(rfeResults, type = c("o", "g"))
+
+columns <- c(
+#  "f18", "d50", "g09_idade", "d11" , "d45", "F2_amigo_verd", "d37", "f1", "f26", "d01", "f29", "m18", "p15_b", "l2")
+   "d45", "F2_amigo_verd", "d37", "p15_b", "p15_b", "d17", "d11", "p14_a", "f18", "p13_a")
+
+trainData <- trainData[,c(columns, "dias_internacao")]
+testData <- testData[,c(columns, "dias_internacao")]
+
+```
+
+
+Aplicando Random Forest sobre dados imputados e variaveis selecionadas 
+
+```{r}
+library(DMwR)
+library(pROC)
+library(MLmetrics)
+
+# configuracao do modelo
+
+modelLookup("rf") #visualizar hyperparametros
+
+trainCtrl <- trainControl(method="repeatedcv", number=10, repeats=5, savePredictions=TRUE,
+                              classProbs=TRUE, summaryFunction=twoClassSummary,
+                              sampling=NULL, set.seed(654))
+
+trainCtrldown <- trainControl(method="repeatedcv", number=10, repeats=5, savePredictions=TRUE,
+                              classProbs=TRUE, summaryFunction=twoClassSummary,
+                              sampling="down", set.seed(654))
+
+trainCtrlup <- trainControl(method="repeatedcv", number=10, repeats=5, savePredictions=TRUE,
+                              classProbs=TRUE, summaryFunction=twoClassSummary,
+                              sampling="up", set.seed(654))
+
+trainCtrlsmote <- trainControl(method="repeatedcv", number=10, repeats=5, savePredictions=TRUE,
+                              classProbs=TRUE, summaryFunction=twoClassSummary,
+                              sampling="smote", seed=set.seed(654))
+#Rprof()
+#  #comando
+#Rprof(NULL)
+#summaryRprof()
+
+#Another major difference is that we only consider a Random subset of predictors m each time we do a split on training examples. Whereas usually in Trees we find all the predictors while doing a split and choose best amongst them. Typically m=sqrt(p) where p are the number of predictors.
+
+Rprof()
+    modelRF <- train(dias_internacao ~., data=trainData, trControl=trainCtrl, method="rf", metric = "ROC", tuneGrid=expand.grid(.mtry = seq(1, ceiling(1.5*sqrt(ncol(trainData))), by=1) ) )  
+  
+    modelRFdown <- train(dias_internacao ~., data=trainData, trControl=trainCtrldown, method="rf", metric = "ROC", tuneGrid=expand.grid(.mtry = seq(1, ceiling(1.5*sqrt(ncol(trainData))), by=1) ) )  
+    
+    modelRFup <- train(dias_internacao ~., data=trainData, trControl=trainCtrlup, method="rf", metric = "ROC", tuneGrid=expand.grid(.mtry = seq(1, ceiling(1.5*sqrt(ncol(trainData))), by=1) ))  
+  
+    modelRFsmote <- train(dias_internacao ~., data=trainData, trControl=trainCtrlsmote, method="rf", metric = "ROC", tuneGrid=expand.grid(.mtry = seq(1, ceiling(1.5*sqrt(ncol(trainData))), by=1) ))
+Rprof(NULL)
+
+summaryRprof()
+
+plot(modelRF)
+modelRF$bestTune
+modelRF$finalModel
+plot(modelRF$finalModel)
+print(varImp(modelRF, scale=TRUE))
+plot(varImp(modelRF, scale=TRUE))
+ 
+plot(modelRFdown)
+modelRFdown$bestTune
+modelRFdown$finalModel
+plot(modelRFdown$finalModel)
+print(varImp(modelRFdown, scale=TRUE))
+plot(varImp(modelRFdown, scale=TRUE))
+
+plot(modelRFup)
+modelRFup$bestTune
+modelRFup$finalModel
+plot(modelRFup$finalModel)
+print(varImp(modelRFup, scale=TRUE))
+plot(varImp(modelRFup, scale=TRUE))
+
+plot(modelRFsmote)
+modelRFsmote$bestTune
+modelRFsmote$finalModel
+plot(modelRFsmote$finalModel)
+print(varImp(modelRFsmote, scale=TRUE))
+plot(varImp(modelRFsmote, scale=TRUE))
+
+print("\n avaliando nos dados de treino")
+
+library(pROC)
+
+predictions <- predict(modelRF, trainData[-11])
+#predictions <- predict(modelRF, subset(trainData, select = -dias_internacao)) 
+#predictions <- predict(modelRF, trainData) 
+print(confusionMatrix(predictions, trainData$dias_internacao))
+roc = roc(trainData$dias_internacao, predict(modelRF, trainData[-11], type="prob")[,"le14"])
+# roc<-multiclass.roc(trainData$dias_internacao,as.ordered(predictions))
+roc$auc
+plot(roc)
+
+predictionsdown <- predict(modelRFdown, subset(trainData, select = -dias_internacao))
+print(confusionMatrix(predictionsdown, trainData$dias_internacao))
+rocdown = roc(trainData$dias_internacao, predict(modelRFdown, subset(trainData, select = -dias_internacao), type="prob")[,"le14"])
+# rocdown<-multiclass.roc(trainData$dias_internacao,as.ordered(predictionsdown))
+rocdown$auc
+plot(rocdown)
+
+predictionsup <- predict(modelRFup, subset(trainData, select = -dias_internacao))
+print(confusionMatrix(predictionsup, trainData$dias_internacao))
+rocup = roc(trainData$dias_internacao, predict(modelRFup, subset(trainData, select = -dias_internacao), type="prob")[,"le14"])
+# rocup<-multiclass.roc(trainData$dias_internacao,as.ordered(predictionsup))
+rocup$auc
+plot(rocup)
+
+predictionssmote <- predict(modelRFsmote, subset(trainData, select = -dias_internacao))
+print(confusionMatrix(predictionssmote, trainData$dias_internacao))
+rocsmote = roc(trainData$dias_internacao, predict(modelRFsmote, subset(trainData, select = -dias_internacao), type="prob")[,"le14"])
+# rocsmote<-multiclass.roc(trainData$dias_internacao,as.ordered(predictionssmote))
+rocsmote$auc
+plot(rocsmote)
+
+
+print("avaliando nos dados de teste")
+
+# Avaliando o modelo sobre os dados de teste
+
+predictions <- predict(modelRF, subset(testData, select = -dias_internacao))
+print(confusionMatrix(predictions, testData$dias_internacao))
+roc = roc(testData$dias_internacao, predict(modelRF, testData, type="prob")[,"le14"])
+# roc<-multiclass.roc(testData$dias_internacao,as.ordered(predictions))
+roc$auc
+plot(roc)
+
+predictionsdown <- predict(modelRFdown, subset(testData, select = -dias_internacao))
+print(confusionMatrix(predictionsdown, testData$dias_internacao))
+rocdown = roc(testData$dias_internacao, predict(modelRFdown, testData, type="prob")[,"le14"])
+# rocdown<-multiclass.roc(testData$dias_internacao,as.ordered(predictionsdown))
+rocdown$auc
+plot(rocdown)
+
+predictionsup <- predict(modelRFup, subset(testData, select = -dias_internacao))
+print(confusionMatrix(predictionsup, testData$dias_internacao))
+rocup = roc(testData$dias_internacao, predict(modelRFup, testData, type="prob")[,"le14"])
+# rocup<-multiclass.roc(testData$dias_internacao,as.ordered(predictionsup))
+rocup$auc
+plot(rocup)
+
+predictionssmote <- predict(modelRFsmote, subset(testData, select = -dias_internacao))
+print(confusionMatrix(predictionssmote, testData$dias_internacao))
+rocsmote = roc(testData$dias_internacao, predict(modelRFsmote, testData, type="prob")[,"le14"])
+# rocsmote<-multiclass.roc(testData$dias_internacao,as.ordered(predictionssmote))
+rocsmote$auc
+plot(rocsmote)
+
+```
+
+Modelando com SVM
+
+```{r}
+
+library(e1071)
+
+# configurando particoes para treino e teste
+#set.seed(567)
+set.seed(7654)
+
+intern <- completedTemp5
+
+particao <- createDataPartition(intern$dias_internacao, p=0.75, list=FALSE)
+trainData <- intern[particao,]
+testData <- intern[-particao,]
+plot(prop.table(table(intern$dias_internacao)))
+plot(prop.table(table(trainData$dias_internacao)))
+plot(prop.table(table(testData$dias_internacao)))
+
+library(mlbench)
+numericVar <- trainData[,c(3,11:19)] 
+correlationMatrix <- cor(numericVar)
+print(correlationMatrix)
+highlyCorrelated <- findCorrelation(correlationMatrix, cutoff=0.75)
+remVar <- names(numericVar[highlyCorrelated])
+remVar
+trainData <- subset(trainData, select = -c(d02)) # colocar aqui todas as remVar
+testData <- subset(testData, select = -c(d02)) # colocar aqui todas as remVar
+
+#### Recursive Feature Selection - Model: Random Forest // Metric: ROC
+#trainCtrl <- trainControl(method="repeatedcv", number=10, repeats=5)
+rfeCrtl <- rfeControl(functions=rfFuncs, method="repeatedcv", number=10, repeats=1, returnResamp="final")
+rfeResults <- rfe(dias_internacao ~., data=trainData,
+               sizes=seq(1, ncol(trainData)-1 , by=2),
+               rfeControl=rfeCrtl, method="rf")
+
+rfeResults
+predictors(rfeResults) # cuidar porque as variaveis retornadas combinam os valores das categorias, por exemplo, F2_amigo_verdSim
+plot(rfeResults)
+
+trainData <- trainData[,c("g09_idade", "d03", "d11", "d25a", "p13_a", "dias_internacao")]
+testData <- testData[,c("g09_idade", "d03", "d11", "d25a", "p13_a", "dias_internacao")]
+
+plot(prop.table(table(trainData$dias_internacao)))
+plot(prop.table(table(testData$dias_internacao)))
+
+
+# configuracao do modelo
+
+modelLookup("svmLinear") #visualizar hyperparametros
+modelLookup("svmRadial") #visualizar hyperparametros
+
+trainCtrl <- trainControl(method="repeatedcv", number=10, repeats=5)
+
+modelSvmL <- train(dias_internacao ~., data=trainData, trControl=trainCtrl,
+                     method="svmLinear", preProcess = c("center", "scale"),
+                     tuneLength=10)  
+ 
+modelSvmR <- train(dias_internacao ~., data=trainData, trControl=trainCtrl,
+                   method="svmRadial", preProcess = c("center", "scale"),
+                   tuneLength=10)  
+
+# modelSvmL <- train(dias_internacao ~., data=trainData, trControl=trainCtrl,
+#                      method="svmLinear", preProcess = c("center", "scale"),
+#                      tuneGrid=expand.grid(C = c(0.01, 0.025, 0.05, 0.1, 0.25)))  
+
+modelSvmR <- train(dias_internacao ~., data=trainData, trControl=trainCtrl,
+                      method="svmRadial", preProcess = c("center", "scale"),
+                     tuneGrid=expand.grid(C = c(0,05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35), sigma = c(0.25, 0.275, 0.3, 0.325, 0.35)))  
+
+plot(modelSvmL)
+plot(modelSvmR)
+
+#treinar mais um kernel svmPoly degree (Polynomial Degree) scale (Scale) C (Cost)
+#predizer e avalair RMSE
+# alterar os valores dos >60 +- ver hist
+  
+library("ModelMetrics")
+predictionsL <- predict(modelSvmL, testData)
+RMSEL <- rmse(testData$dias_internacao,predictionsL)
+predictionsR <- predict(modelSvmR, testData)
+RMSER <- rmse(testData$dias_internacao,predictionsR)
+
+```
+
+
+Modelando com Naive Bayes
+
+```{r}
+
+
+library(naivebayes)
+
+# selecionando atributos com at? 10% de missing
+intern <- internacao
+intern$dias_internacao <- discretize(intern$dias_internacao,method = "fixed", breaks = c(-Inf,7,21,Inf),  labels = c("le7", "g7le21", "g21"))
+
+particao <- createDataPartition(intern$dias_internacao, p=0.75, list=FALSE)
+trainData <- intern[particao,]
+testData <- intern[-particao,]
+prop.table(table(intern$dias_internacao))
+prop.table(table(trainData$dias_internacao))
+prop.table(table(testData$dias_internacao))
+
+NB1 <- naive_bayes(dias_internacao ~., trainData)
+print(NB1)
+# plot(NB1) missing
+predictions <- predict(NB1, trainData)
+print(confusionMatrix(predictions, trainData$dias_internacao))
+
+modelLookup("nb") #visualizar hyperparametros
+
+trainCtrl <- trainControl(method="repeatedcv", number=10, repeats=5, savePredictions=TRUE,
+                              classProbs=TRUE, summaryFunction=multiClassSummary,
+                              sampling="up")
+
+NB2 <- train(dias_internacao ~., data=trainData, method="nb", trControl=trainCtrl, metric = "AUC",
+             tuneGrid=expand.grid(usekernel = c(TRUE, FALSE), fL = c(0, 1), adjust = c(TRUE, FALSE))
+             )  
+
+NB2$bestTune
+
+print(NB2)
+plot(NB2)
+predictions <- predict(NB2, trainData)
+print(confusionMatrix(predictions, trainData$dias_internacao))
+predictions <- predict(NB2, testData)
+print(confusionMatrix(predictions, testData$dias_internacao))
+
+
+```
+
+
+```{r}
+
+
+
+
+```
+
